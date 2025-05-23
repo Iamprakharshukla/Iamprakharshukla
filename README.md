@@ -1,6 +1,7 @@
 <h1 align="center">Hi 👋, I'm Prakhar shukla</h1>
 <h3 align="center">A passionate full stack developer from India</h3>
 
+<img alingn="right" alt="coding" width="400"  src="https://media.tenor.com/C9qukZqPPS4AAAAM/coding-typing.gif">
 <p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=iamprakharshukla" alt="iamprakharshukla" /></a> </p>
 
 - 🌱 I’m currently learning **Java script**
