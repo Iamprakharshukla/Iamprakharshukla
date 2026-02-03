@@ -63,23 +63,17 @@
 ---
 
 ## 📊 GitHub Stats
+
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=iamprakharshukla&show_icons=true&theme=highcontrast" height="180"/>
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=iamprakharshukla&layout=compact&theme=highcontrast" height="180"/>
 </p>
 
 <p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=iamprakharshukla&theme=highcontrast" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=iamprakharshukla&theme=highcontrast"/>
 </p>
 
 ---
 
-## ☕ Buy Me a Coffee
-<p align="center">
-  <b>If you like my work, you can support me ☺️</b><br/><br/>
-  <img src="qr_prakhar.jpg" width="200"/>
-</p>
-
----
 
 <h3 align="center">👋 SEE YAA...</h3>
