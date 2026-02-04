@@ -24,7 +24,7 @@
 
 ## 🏆 GitHub Trophies
 <p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=iamprakharshukla&theme=radical&margin-w=10&margin-h=10"/>
+  <img src="https://github-profile-trophy.vercel.app/?username=Iamprakharshukla&theme=radical&margin-w=10&margin-h=10"/>
 </p>
 
 ---
