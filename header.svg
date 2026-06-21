@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 160" width="100%" height="160">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="neon-glow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F2FE" />
+      <stop offset="50%" stop-color="#4FACFE" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </linearGradient>
+    <linearGradient id="title-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF5733" />
+      <stop offset="30%" stop-color="#C0392B" />
+      <stop offset="60%" stop-color="#8E44AD" />
+      <stop offset="100%" stop-color="#2980B9" />
+    </linearGradient>
+    <linearGradient id="text-glow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f2fe" />
+      <stop offset="100%" stop-color="#4facfe" />
+    </linearGradient>
+    <style>
+      .title {
+        font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+        font-weight: 800;
+        font-size: 42px;
+        fill: #FFFFFF;
+      }
+      .highlight {
+        fill: url(#text-glow);
+      }
+      .phrase {
+        font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+        font-weight: 600;
+        font-size: 22px;
+        fill: #A0AEC0;
+        opacity: 0;
+      }
+      .phrase-1 { animation: cycle-1 12s infinite; }
+      .phrase-2 { animation: cycle-2 12s infinite; }
+      .phrase-3 { animation: cycle-3 12s infinite; }
+      .phrase-4 { animation: cycle-4 12s infinite; }
+      
+      @keyframes cycle-1 {
+        0%, 22% { opacity: 1; }
+        25%, 100% { opacity: 0; }
+      }
+      @keyframes cycle-2 {
+        0%, 25% { opacity: 0; }
+        28%, 47% { opacity: 1; }
+        50%, 100% { opacity: 0; }
+      }
+      @keyframes cycle-3 {
+        0%, 50% { opacity: 0; }
+        53%, 72% { opacity: 1; }
+        75%, 100% { opacity: 0; }
+      }
+      @keyframes cycle-4 {
+        0%, 75% { opacity: 0; }
+        78%, 97% { opacity: 1; }
+        100% { opacity: 0; }
+      }
+      
+      /* Glowing Tech Graphics Animation */
+      .pulse-circle {
+        animation: pulse 3s infinite;
+      }
+      .glow-path {
+        stroke-dasharray: 100;
+        stroke-dashoffset: 100;
+        animation: draw 4s linear infinite;
+      }
+      @keyframes pulse {
+        0% { r: 4px; opacity: 0.3; }
+        50% { r: 7px; opacity: 0.9; }
+        100% { r: 4px; opacity: 0.3; }
+      }
+      @keyframes draw {
+        to { stroke-dashoffset: -100; }
+      }
+    </style>
+  </defs>
+  
+  <!-- Sleek dark theme bg -->
+  <rect width="100%" height="100%" fill="#0D1117" rx="10" />
+  
+  <!-- Tech Graphics on Right -->
+  <g stroke="#21262D" stroke-width="1.5" fill="none">
+    <!-- Grid lines -->
+    <path d="M 600,0 L 600,160 M 700,0 L 700,160 M 500,0 L 500,160" />
+    <path d="M 450,40 L 800,40 M 450,120 L 800,120" />
+    
+    <!-- Glowing diagonal tech connections -->
+    <path d="M 600,40 L 640,80 L 700,80 L 740,120" class="glow-path" stroke="#00f2fe" stroke-width="2" />
+    <path d="M 500,120 L 540,80 L 600,80" class="glow-path" stroke="#4facfe" stroke-width="2" style="animation-delay: 2s;" />
+  </g>
+  
+  <!-- Glowing nodes -->
+  <circle cx="640" cy="80" r="5" fill="#00f2fe" class="pulse-circle" />
+  <circle cx="700" cy="80" r="5" fill="#4facfe" class="pulse-circle" style="animation-delay: 1.5s;" />
+  <circle cx="540" cy="80" r="5" fill="#00f2fe" class="pulse-circle" style="animation-delay: 0.7s;" />
+  
+  <!-- Title and Name -->
+  <text x="30" y="65" class="title">Hi, I'm <tspan class="highlight">Prakhar Shukla</tspan> 👋</text>
+  
+  <!-- Animated Subtitles -->
+  <g transform="translate(30, 110)">
+    <text class="phrase phrase-1" x="0" y="0">🚀 Full Stack Engineer &amp; SaaS Creator</text>
+    <text class="phrase phrase-2" x="0" y="0">🤖 AI Engineer &amp; RAG Systems Specialist</text>
+    <text class="phrase phrase-3" x="0" y="0">💻 Software Architect &amp; Open Source Contributor</text>
+    <text class="phrase phrase-4" x="0" y="0">📊 Competitive Programmer &amp; Problem Solver</text>
+  </g>
+</svg>
