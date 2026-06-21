@@ -266,6 +266,11 @@ I track code commits, streak lengths, and language metrics to monitor continuous
   </tr>
   <tr>
     <td colspan="2" align="center">
+      <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Iamprakharshukla&theme=tokyonight" alt="GitHub Profile Summary" width="100%" />
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center">
       <img src="https://github-readme-streak-stats.herokuapp.com/?user=Iamprakharshukla&theme=tokyonight" alt="GitHub Streak" width="100%" />
     </td>
   </tr>
