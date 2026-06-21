@@ -1,0 +1,184 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360" width="100%" height="360">
+  <defs>
+    <!-- Card Gradients -->
+    <linearGradient id="card-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#161B22" />
+      <stop offset="100%" stop-color="#0D1117" />
+    </linearGradient>
+    
+    <!-- Neon Highlights -->
+    <linearGradient id="neon-cyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F2FE" />
+      <stop offset="100%" stop-color="#4FACFE" />
+    </linearGradient>
+    
+    <!-- Styling -->
+    <style>
+      .bg-rect {
+        fill: #0D1117;
+        stroke: #21262D;
+        stroke-width: 1.5;
+        rx: 10px;
+      }
+      .card-border {
+        stroke: #30363D;
+        stroke-width: 1.5;
+        fill: url(#card-grad);
+        rx: 8px;
+        transition: stroke 0.3s;
+      }
+      .card-border:hover {
+        stroke: #4FACFE;
+      }
+      .title {
+        font-family: 'Segoe UI', -apple-system, sans-serif;
+        font-weight: 700;
+        font-size: 14px;
+        fill: #FFFFFF;
+      }
+      .tech-text {
+        font-family: 'Segoe UI', -apple-system, sans-serif;
+        font-weight: 500;
+        font-size: 11px;
+        fill: #8B949E;
+      }
+      .conn-line {
+        stroke: #30363D;
+        stroke-width: 2;
+        fill: none;
+        stroke-dasharray: 4 4;
+      }
+      .flow-pulse {
+        animation: pulse-glow 2s infinite;
+      }
+      @keyframes pulse-glow {
+        0% { r: 4px; opacity: 0.6; }
+        50% { r: 6px; opacity: 0.95; }
+        100% { r: 4px; opacity: 0.6; }
+      }
+    </style>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect width="100%" height="100%" class="bg-rect" />
+
+  <!-- Connection Channels (Behind Cards) -->
+  <g>
+    <!-- FE to BE -->
+    <path id="path-fe-be" d="M 240,100 L 300,100" class="conn-line" />
+    
+    <!-- BE to DB (Query and Return Channels) -->
+    <path id="path-be-db-1" d="M 500,85 L 560,85" class="conn-line" />
+    <path id="path-be-db-2" d="M 560,115 L 500,115" class="conn-line" />
+    
+    <!-- BE to AI -->
+    <path id="path-be-ai" d="M 370,150 C 370,195 280,195 280,210" class="conn-line" />
+    
+    <!-- BE to DevOps -->
+    <path id="path-be-devops" d="M 430,150 C 430,195 520,195 520,210" class="conn-line" />
+  </g>
+
+  <!-- Live Animated Packets (Flow Indicators) -->
+  <g>
+    <!-- Frontend to Backend Packets -->
+    <circle r="4.5" fill="#00F2FE" class="flow-pulse">
+      <animateMotion dur="2.2s" repeatCount="indefinite" path="M 240,100 L 300,100" />
+    </circle>
+    
+    <!-- Backend to DB Query Packet -->
+    <circle r="4" fill="#F5A623" class="flow-pulse">
+      <animateMotion dur="1.8s" repeatCount="indefinite" path="M 500,85 L 560,85" />
+    </circle>
+    
+    <!-- DB to Backend Response Packet -->
+    <circle r="4" fill="#00FF87" class="flow-pulse">
+      <animateMotion dur="2s" repeatCount="indefinite" path="M 560,115 L 500,115" />
+    </circle>
+    
+    <!-- Backend to AI Model Ingest Packet -->
+    <circle r="4" fill="#9B51E0" class="flow-pulse">
+      <animateMotion dur="3s" repeatCount="indefinite" path="M 370,150 C 370,195 280,195 280,210" />
+    </circle>
+    
+    <!-- Backend to DevOps Container Packet -->
+    <circle r="4" fill="#FF007A" class="flow-pulse">
+      <animateMotion dur="2.8s" repeatCount="indefinite" path="M 430,150 C 430,195 520,195 520,210" />
+    </circle>
+  </g>
+
+  <!-- Card Layers -->
+  
+  <!-- 1. Frontend Client -->
+  <g transform="translate(40, 50)">
+    <rect width="200" height="100" class="card-border" />
+    <!-- Web Browser Frame Representation -->
+    <rect x="15" y="15" width="30" height="20" rx="3" fill="#21262D" />
+    <circle cx="21" cy="20" r="1.5" fill="#FF5F56" />
+    <circle cx="26" cy="20" r="1.5" fill="#FFBD2E" />
+    <circle cx="31" cy="20" r="1.5" fill="#27C93F" />
+    
+    <text x="60" y="32" class="title">Frontend Client</text>
+    <text x="60" y="52" class="tech-text">Next.js &amp; React 19</text>
+    <text x="60" y="68" class="tech-text">TypeScript / Tailwind</text>
+    <text x="60" y="82" class="tech-text">State &amp; Edge Middleware</text>
+  </g>
+
+  <!-- 2. Backend Gateway -->
+  <g transform="translate(300, 50)">
+    <rect width="200" height="100" class="card-border" />
+    <!-- Server Rack Representation -->
+    <rect x="15" y="18" width="30" height="8" rx="1.5" fill="#21262D" />
+    <circle cx="40" cy="22" r="1" fill="#00FF87" />
+    <rect x="15" y="30" width="30" height="8" rx="1.5" fill="#21262D" />
+    <circle cx="40" cy="34" r="1" fill="#00FF87" />
+    
+    <text x="60" y="32" class="title">Backend API</text>
+    <text x="60" y="52" class="tech-text">Node.js / Express.js</text>
+    <text x="60" y="68" class="tech-text">REST APIs / CORS Routing</text>
+    <text x="60" y="82" class="tech-text">Server Actions Gateways</text>
+  </g>
+
+  <!-- 3. Database Cluster -->
+  <g transform="translate(560, 50)">
+    <rect width="200" height="100" class="card-border" />
+    <!-- Database Cylinder representation -->
+    <path d="M 15,22 C 15,15 45,15 45,22 L 45,38 C 45,45 15,45 15,38 Z" fill="#21262D" />
+    <ellipse cx="30" cy="22" rx="15" ry="4" fill="#30363D" />
+    
+    <text x="60" y="32" class="title">Storage Cluster</text>
+    <text x="60" y="52" class="tech-text">MongoDB / PostgreSQL</text>
+    <text x="60" y="68" class="tech-text">MySQL Store Systems</text>
+    <text x="60" y="82" class="tech-text">Geospatial / Aggregates</text>
+  </g>
+
+  <!-- 4. AI & Inference Layer -->
+  <g transform="translate(170, 210)">
+    <rect width="220" height="100" class="card-border" />
+    <!-- AI Brain Node representation -->
+    <circle cx="30" cy="35" r="4" fill="#9B51E0" />
+    <circle cx="20" cy="55" r="4" fill="#9B51E0" />
+    <circle cx="40" cy="55" r="4" fill="#9B51E0" />
+    <line x1="30" y1="35" x2="20" y2="55" stroke="#30363D" stroke-width="1" />
+    <line x1="30" y1="35" x2="40" y2="55" stroke="#30363D" stroke-width="1" />
+    
+    <text x="60" y="32" class="title">AI &amp; Models Layer</text>
+    <text x="60" y="52" class="tech-text">YOLO / OpenCV / dlib</text>
+    <text x="60" y="68" class="tech-text">LangChain / FAISS Vector DB</text>
+    <text x="60" y="82" class="tech-text">Real-Time Frame Inferencing</text>
+  </g>
+
+  <!-- 5. Cloud Hosting & DevOps -->
+  <g transform="translate(410, 210)">
+    <rect width="220" height="100" class="card-border" />
+    <!-- Docker Container representation -->
+    <rect x="15" y="20" width="10" height="10" rx="1" fill="#FF007A" />
+    <rect x="28" y="20" width="10" height="10" rx="1" fill="#FF007A" />
+    <rect x="15" y="33" width="10" height="10" rx="1" fill="#FF007A" />
+    <rect x="28" y="33" width="10" height="10" rx="1" fill="#FF007A" />
+    
+    <text x="60" y="32" class="title">Infrastructure</text>
+    <text x="60" y="52" class="tech-text">Docker Containers / Linux</text>
+    <text x="60" y="68" class="tech-text">Vercel Deployments / CI/CD</text>
+    <text x="60" y="82" class="tech-text">Serverless Edge Middleware</text>
+  </g>
+</svg>

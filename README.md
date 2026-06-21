@@ -139,43 +139,9 @@ A curated view of tools, frameworks, and programming languages that I use to tur
 
 Below is a structured flow showing how I typically map out modern full-stack web platforms. This diagram illustrates separation of concerns across a standard client-server-database-model lifecycle.
 
-```mermaid
-graph TD
-    subgraph Client Space [Frontend Layer]
-        A["Next.js App (SSR/ISR)"] --> B["React Dynamic Elements"]
-        B --> C["TypeScript Verification & Schema Validation"]
-    end
-
-    subgraph API Space [Backend Gateway]
-        D["Node.js Application Context"] --> E["Express Router Configuration"]
-        E --> F["RESTful Endpoints & Middleware Stack"]
-    end
-
-    subgraph Storage Space [Database & Cache Layer]
-        G[("MongoDB (NoSQL Document Store)")]
-        H[("PostgreSQL (Relational Store)")]
-        I[("MySQL (Transactional Store)")]
-    end
-
-    subgraph Cognitive Space [AI & Model Inference Layer]
-        J["LangChain Agentic Router"] --> K["FAISS (High-Dim Vector Database)"]
-        L["Computer Vision Pipelines (OpenCV / YOLO)"] --> M["NVIDIA Accelerated APIs"]
-    end
-
-    subgraph Runtime Space [Infrastructure & Continuous Delivery]
-        N["Docker Swarm / Container Context"] --> O["Vercel Edge Deployments"]
-        O --> P["Linux/Unix Server Environments"]
-    end
-
-    %% Flow Mechanics
-    C -->|Secure API Requests| E
-    F -->|Document Read/Write| G
-    F -->|Relational Queries| H
-    F -->|Structured Queries| I
-    E -->|Model Dispatch| J
-    E -->|Continuous Stream Processing| L
-    G -.->|Document Sync / Vectorize| K
-```
+<p align="center">
+  <img src="architecture.svg" width="100%" alt="Prakhar's Full-Stack System Architecture" />
+</p>
 
 ---
 
