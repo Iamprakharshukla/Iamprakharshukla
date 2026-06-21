@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 240" width="100%" height="240">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="g-fullstack" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF007A" />
+      <stop offset="100%" stop-color="#7928CA" />
+    </linearGradient>
+    <linearGradient id="g-ai" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F2FE" />
+      <stop offset="100%" stop-color="#4FACFE" />
+    </linearGradient>
+    <linearGradient id="g-arch" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F5A623" />
+      <stop offset="100%" stop-color="#F8E71C" />
+    </linearGradient>
+    <linearGradient id="g-dsa" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#45E3FF" />
+      <stop offset="100%" stop-color="#5544FF" />
+    </linearGradient>
+    
+    <style>
+      .label {
+        font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+        font-weight: 600;
+        font-size: 14px;
+        fill: #C9D1D9;
+      }
+      .percentage {
+        font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+        font-weight: 700;
+        font-size: 14px;
+        fill: #8B949E;
+      }
+      .bar-bg {
+        fill: #21262D;
+        rx: 5px;
+      }
+      .bar-fill {
+        rx: 5px;
+        animation: fill-up 2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+      }
+      .dot {
+        animation: glow-pulse 1.5s ease-in-out infinite alternate;
+      }
+      
+      @keyframes fill-up {
+        from { width: 0; }
+      }
+      @keyframes glow-pulse {
+        from { opacity: 0.4; filter: drop-shadow(0 0 2px var(--color)); }
+        to { opacity: 1; filter: drop-shadow(0 0 6px var(--color)); }
+      }
+    </style>
+  </defs>
+
+  <!-- Sleek background -->
+  <rect width="100%" height="100%" fill="#0D1117" rx="10" />
+
+  <!-- Skill 1 -->
+  <g transform="translate(30, 30)">
+    <text x="0" y="15" class="label">🚀 Full Stack Engineering</text>
+    <text x="700" y="15" class="percentage">95%</text>
+    <rect x="0" y="25" width="740" height="8" class="bar-bg" />
+    <rect x="0" y="25" width="703" height="8" fill="url(#g-fullstack)" class="bar-fill" />
+    <circle cx="703" cy="29" r="4" fill="#FF007A" class="dot" style="--color: #FF007A;" />
+  </g>
+
+  <!-- Skill 2 -->
+  <g transform="translate(30, 80)">
+    <text x="0" y="15" class="label">🤖 AI &amp; Retrieval-Augmented Generation (RAG)</text>
+    <text x="700" y="15" class="percentage">90%</text>
+    <rect x="0" y="25" width="740" height="8" class="bar-bg" />
+    <rect x="0" y="25" width="666" height="8" fill="url(#g-ai)" class="bar-fill" />
+    <circle cx="666" cy="29" r="4" fill="#00F2FE" class="dot" style="--color: #00F2FE;" />
+  </g>
+
+  <!-- Skill 3 -->
+  <g transform="translate(30, 130)">
+    <text x="0" y="15" class="label">🏗️ Software Architecture &amp; System Design</text>
+    <text x="700" y="15" class="percentage">85%</text>
+    <rect x="0" y="25" width="740" height="8" class="bar-bg" />
+    <rect x="0" y="25" width="629" height="8" fill="url(#g-arch)" class="bar-fill" />
+    <circle cx="629" cy="29" r="4" fill="#F5A623" class="dot" style="--color: #F5A623;" />
+  </g>
+
+  <!-- Skill 4 -->
+  <g transform="translate(30, 180)">
+    <text x="0" y="15" class="label">📊 Algorithmic Problem Solving (DSA)</text>
+    <text x="700" y="15" class="percentage">92%</text>
+    <rect x="0" y="25" width="740" height="8" class="bar-bg" />
+    <rect x="0" y="25" width="680" height="8" fill="url(#g-dsa)" class="bar-fill" />
+    <circle cx="680" cy="29" r="4" fill="#45E3FF" class="dot" style="--color: #45E3FF;" />
+  </g>
+</svg>
