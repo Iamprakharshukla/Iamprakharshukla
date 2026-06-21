@@ -6,8 +6,7 @@
 📅 LAST UPDATED: June 2026
 ========================================================================
 Designed with ultra-premium typography, interactive elements, custom SVG banner animations,
-Mermaid architecture maps, dynamic progress bar matrices, systems and algorithms ledger,
-advanced code boilerplate blocks, and high-impact layouts.
+Mermaid architecture maps, dynamic progress bar matrices, and high-impact layouts.
 ========================================================================
 -->
 
@@ -258,7 +257,7 @@ A collection of selected applications displaying architectural decisions, techno
       <ul>
         <li><b>Detection Pipeline:</b> Employs HOG (Histogram of Oriented Gradients) filter algorithms to isolate faces in camera streams.</li>
         <li><b>Embedding Maps:</b> Generates 128-dimensional vector models representing structural keypoints of identified faces.</li>
-        <li><b>Anti-Spoofing:</b> Monitors micro-movements (like eye blinks and head tilt ratios) to ensure identity validity.</li>
+        <li><b>Anti-Spoofing:</b> Monitors micro-expressions and eye blink movements.</li>
         <li><b>Reporting Engine:</b> Matches vectors against database profiles, auto-updating employee rosters in SQL tables.</li>
       </ul>
       <details>
@@ -274,132 +273,6 @@ A collection of selected applications displaying architectural decisions, techno
     </td>
   </tr>
 </table>
-
----
-
-# 🧠 Systems & Algorithms Mastery Ledger
-
-A detailed breakdown of the structural paradigms, search patterns, and sorting techniques I practice regularly, including reference implementations demonstrating optimization strategies.
-
-### 1. Advanced Graph Paradigms
-*   **Traversal Algorithms:** Using Depth-First Search (DFS) for structural cycle detection and topological sorting. Employing Breadth-First Search (BFS) to find shortest path solutions in unweighted graphs.
-*   **Shortest Path Protocols:** Implementing Dijkstra’s algorithm to navigate weighted graphs, using heap-based priority queues to reduce time complexity.
-
-#### 📝 Python Dijkstra's Algorithm Template (Heap-based)
-```python
-import heapq
-
-def dijkstra(graph, start):
-    # Initialize distances dict with infinity, 0 for start node
-    distances = {node: float('infinity') for node in graph}
-    distances[start] = 0
-    
-    # Priority queue storing (distance, node) tuple
-    priority_queue = [(0, start)]
-    
-    while priority_queue:
-        current_distance, current_node = heapq.heappop(priority_queue)
-        
-        # Skip processing if we found a shorter path already
-        if current_distance > distances[current_node]:
-            continue
-            
-        # Relax edges to adjacent nodes
-        for neighbor, weight in graph[current_node].items():
-            distance = current_distance + weight
-            
-            if distance < distances[neighbor]:
-                distances[neighbor] = distance
-                heapq.heappush(priority_queue, (distance, neighbor))
-                
-    return distances
-```
-
-### 2. Dynamic Programming Formats
-*   **State Space Optimization:** Formulating transitions using tabulation (bottom-up) and memoization (top-down) arrays to eliminate redundant calculations.
-*   **Classic Subproblems:** Solving variations of the Knapsack problem, Longest Common Subsequences (LCS), Matrix Chain Multiplication, and edit distances.
-
-### 3. Structured Sorting & Searching
-*   **Binary Search Boundaries:** Constructing custom predicates to identify optimal values over monotonic search spaces.
-*   **Divide and Conquer:** Implementing quicksort and mergesort routines, understanding spatial implications, recursion depths, and structural constraints.
-
-#### 📝 Java 1D Segment Tree Implementation
-```java
-class SegmentTree {
-    int[] tree;
-    int n;
-
-    public SegmentTree(int[] arr) {
-        n = arr.length;
-        tree = new int[4 * n];
-        build(arr, 0, 0, n - 1);
-    }
-
-    private void build(int[] arr, int node, int start, int end) {
-        if (start == end) {
-            tree[node] = arr[start];
-            return;
-        }
-        int mid = start + (end - start) / 2;
-        build(arr, 2 * node + 1, start, mid);
-        build(arr, 2 * node + 2, mid + 1, end);
-        tree[node] = Math.min(tree[2 * node + 1], tree[2 * node + 2]);
-    }
-
-    public int query(int node, int start, int end, int l, int r) {
-        if (r < start || end < l) return Integer.MAX_VALUE;
-        if (l <= start && end <= r) return tree[node];
-        
-        int mid = start + (end - start) / 2;
-        int left = query(2 * node + 1, start, mid, l, r);
-        int right = query(2 * node + 2, mid + 1, end, l, r);
-        return Math.min(left, right);
-    }
-}
-```
-
-### 4. Computer Vision Parallel Ingestion Template
-Multi-threaded video capture queue written in Python, designed to maximize YOLO model feed processing rates by avoiding core execution loops bottlenecks.
-
-#### 📝 Multi-Threaded Video Buffer
-```python
-import cv2
-import threading
-from queue import Queue
-import time
-
-class VideoStreamQueue:
-    def __init__(self, src=0, queue_size=128):
-        self.stream = cv2.VideoCapture(src)
-        self.stopped = False
-        self.Q = Queue(maxsize=queue_size)
-        
-    def start(self):
-        t = threading.Thread(target=self.update, args=())
-        t.daemon = True
-        t.start()
-        return self
-        
-    def update(self):
-        while True:
-            if self.stopped:
-                return
-            if not self.Q.full():
-                grabbed, frame = self.stream.read()
-                if not grabbed:
-                    self.stop()
-                    return
-                self.Q.put(frame)
-            else:
-                time.sleep(0.01) # Yield core execution
-                
-    def read(self):
-        return self.Q.get()
-        
-    def stop(self):
-        self.stopped = True
-        self.stream.release()
-```
 
 ---
 
@@ -484,32 +357,6 @@ I practice data structures and algorithms regularly to train logical thinking an
 
 ---
 
-# 🗺️ Strategic Roadmap 2026
-
-An ambitious roadmap mapping technical milestones across Artificial Intelligence, Full-Stack Architecture, and Career Growth.
-
-```mermaid
-gantt
-    title Strategic Engineering Milestones (2026)
-    dateFormat  YYYY-MM-DD
-    section AI & Machine Learning
-    Advanced RAG Engines (Graph & Agentic RAG)      :active, a1, 2026-01-01, 2026-04-15
-    Multi-Agent Architectures (crewAI, LangGraph)   :a2, 2026-04-16, 2026-08-01
-    Launch Production AI SaaS App                   :a3, 2026-08-02, 2026-12-31
-    section Full-Stack Systems
-    Micro-Frontends & Domain Driven Design         :active, f1, 2026-01-01, 2026-05-01
-    Event-Driven Microservices (Kafka, RabbitMQ)   :f2, 2026-05-02, 2026-09-15
-    Cloud Deployments & Infrastructure-as-Code     :f3, 2026-09-16, 2026-12-31
-    section Career Milestones
-    Software Engineering Internships               :active, c1, 2026-01-01, 2026-07-31
-    Core Contributions to Major OS Projects        :c2, 2026-08-01, 2026-12-31
-```
-
-*   **Q1-Q2 Focus:** Engineering highly resilient real-time interfaces, mastering graph-based retrieval models, and secure cloud API scaling.
-*   **Q3-Q4 Focus:** Transitioning towards multi-tier distributed architectures, integrating event queues, and launching an automated product.
-
----
-
 # 🏆 Professional Milestone Cards
 
 A summary of accomplishments highlighting technical versatility and execution focus.
@@ -518,7 +365,7 @@ A summary of accomplishments highlighting technical versatility and execution fo
   <tr>
     <td width="33%" valign="top">
       <h4>⚡ Full Stack Architect</h4>
-      <p>Designed and deployed end-to-end cloud platforms including Estate-Xplorer and Nexora AI. Experienced in React/Next.js and Express databases.</p>
+      <p>Designed and deployed end-to-end cloud platforms including Nexora AI. Experienced in React/Next.js and Express databases.</p>
     </td>
     <td width="33%" valign="top">
       <h4>🤖 AI Specialist</h4>
@@ -600,16 +447,6 @@ If my open-source frameworks, code modules, or project architectures have helped
     <img src="https://img.shields.io/badge/Sponsor%20Me-EA4AAA?style=for-the-badge&logo=github-sponsors&logoColor=white" alt="Sponsor Me" />
   </a>
 </p>
-
----
-
-# 🎮 Interactive Contribution Sandbox
-
-Check out my GitHub contribution grid snake running through my code commits!
-
-<div align="center">
-  <img src="https://raw.githubusercontent.com/Iamprakharshukla/Iamprakharshukla/output/github-contribution-grid-snake.svg" alt="GitHub Contribution Snake Grid" width="100%" />
-</div>
 
 ---
 
